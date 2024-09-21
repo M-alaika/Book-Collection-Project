@@ -1,0 +1,79 @@
+{% extends 'master.html' %}
+    {% block title %}
+        Book Details
+    {%endblock%}
+
+    {% block content %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+    <style>
+        body{
+            background-color:rgb(168, 167, 175);
+            color:white;
+            margin-left:20px;
+            padding-bottom: 80px;
+            border: 50px whitesmoke;
+        }
+        h1{
+            background-color: bisque;
+        color:black;
+        font-family: "Copperplate", Copperplate, fantasy;
+        border-style: solid;
+        margin: 10px;
+        padding:10px;
+        text-align:center;
+        }
+        h2{
+            margin-right: 90px;
+            margin-left:90px;
+            /* background-color: antiquewhite; */
+            border-style: double;
+            background-color:blanchedalmond;
+            text-align:center;
+            color:rgb(139, 66, 66);
+            /* margin: 25px; */
+            
+        }
+        a:link, a:visited {
+            background-color: white;
+            color: black;
+            border: 2px solid green;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin-left:550px;
+            
+
+        }
+
+        a:hover, a:active {
+            background-color: green;
+            color: white;
+        }
+    </style> 
+        <div class="column">
+            <div class="row-md">
+            <h1>BOOK TITLE</h1>
+            <h2>{{book.title}}</h2>
+            
+            </div>
+            <div class="row-md">
+            <h1>BOOK AUTHOR</h1>
+            <h2>{{book.author}}</h2>
+            
+            </div>
+            <div class="row-md">
+            <h1>BOOK DESCRIPTION</h1>        
+            <h2>{{book.description}}</h2>
+            
+            </div>
+            <div class="row-md">
+                <a href="https://www.bing.com/ck/a?!&&p=ab299fd65d6de532JmltdHM9MTcyNjYxNzYwMCZpZ3VpZD0xNDM2ZDEwZi01MmQwLTYyNjYtMGE1Ny1jNTAzNTNjNDYzYWYmaW5zaWQ9NTI0NQ&ptn=3&ver=2&hsh=3&fclid=1436d10f-52d0-6266-0a57-c50353c463af&psq=fictional+stories&u=a1aHR0cHM6Ly9pbnRlcmVzdGluZ2xpdGVyYXR1cmUuY29tLzIwMjEvMDkvYmVzdC12ZXJ5LXNob3J0LXN0b3JpZXMtY2FuLXJlYWQtb25saW5lLw&ntb=1" target="_blank">READ BOOK</a>  
+            </div>
+        </div>
+        </div>
+
+    {%endblock%}
+   

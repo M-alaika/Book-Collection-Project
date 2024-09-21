@@ -1,0 +1,40 @@
+{%extends 'master.html'%}
+    {% block title%}
+        LIST OF ALL BOOKS
+    {%endblock%}
+    
+    {%block content%}
+    <style>
+        body{
+            background-color: rgb(168, 167, 175);
+            color:white;
+            margin-left:50px;
+            padding-bottom: 80px;
+            border: 5px whitesmoke;
+        }
+        h1{
+            background-color: bisque;
+        color:black;
+        font-family: "Copperplate", Copperplate, fantasy;
+        border-style: solid;
+        margin: 30px;
+        padding:10px;
+        text-align:center;
+         }
+        h2{
+            background-color: antiquewhite;
+            text-align: center;
+            font-family: "Times New Roman", Times, serif;
+            border-style: double;
+            margin: 40px;
+            margin-right:100px;
+        }
+    </style>   
+    <h1>FICTION BOOKS LIST</h1>
+    <ul>
+        {%for x in books%}
+        <h2><li><a href="details/{{x.id}}">{{x.title}}</a></li></h2>
+        {%endfor%}
+    </ul>
+
+    {%endblock%}
