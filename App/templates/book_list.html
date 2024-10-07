@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #def0ff; /* Blue background */
+            color: #333; /* Dark text for readability */
+        }
+        h1 {
+            text-align: center;
+            color: #ffffff; /* Gold color for the heading */
+            font-size: 2.5em; /* Larger font size */
+            margin-bottom: 20px; /* Spacing below the heading */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color:  #2196F3;; /* Mild light blue for container */
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .book {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #f9f9f9; /* Light background for books */
+        }
+        .title {
+            font-size: 1.5em;
+            color: #333; /* Dark color for title */
+        }
+        .author {
+            font-style: italic;
+            color: #666; /* Gray for author */
+        }
+        .description {
+            margin-top: 10px;
+        }
+        .website {
+            margin-top: 10px;
+        }
+        .rating {
+            font-weight: bold;
+            color: #f80000; /* Gold color for rating */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Book List</h1>
+        <div id="bookList">
+            {% for book in books %}
+            <div class="book">
+                <div class="title">{{ book.title }} <span class="subtitle">({{ book.subtitle }})</span></div>
+                <div class="author">by {{ book.author }}</div>
+                <div><strong>ISBN:</strong> {{ book.isbn }}</div>
+                <div><strong>Published:</strong> {{ book.published|date:"F j, Y" }}</div>
+                <div><strong>Publisher:</strong> {{ book.publisher }}</div>
+                <div><strong>Pages:</strong> {{ book.pages }}</div>
+                <div class="description">{{ book.description }}</div>
+                <div class="website"><a href="{{ book.website }}" target="_blank">Visit Website</a></div>
+                <div class="rating">Rating: {{ book.rating }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>

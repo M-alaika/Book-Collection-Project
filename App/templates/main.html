@@ -4,61 +4,175 @@
 {% endblock %} 
 
 {% block content %}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-    body{
-        background-color:rgb(168, 167, 175);
-        color:white;
-        margin-left:100px;
-        padding-bottom: 80px;
-        border: 5px whitesmoke;
-    }
-    h1{
-        background-color: bisque;
-        color:black;
-        font-family: "Copperplate", Copperplate, fantasy;
-        border-style: solid;
-        margin: 20px;
-        /* border: 2px red; */
-        padding:100px;
-        text-align:center;
-        margin-left: 10px;
-        margin:5px;
-        margin-right: 60px;
-    }
-    h2{
-        text-align:center;
-    }
-    h3{
-        margin-right: 60px;
-        margin-left:30px;
-        background-color: bisque;
-        color: black;
-        text-align:center;
-        border-style: double;
-        font-family: "Times New Roman", Times, serif;
-    }
-</style> 
-    <h1>Books Home Page</h1>  
-    <div class="container-md">
-        <div class="row">
-            <div class="col-md-4">
-            <h3>NON-FICTION
-            <p><a href="NBOOK/"><img width="250px" height="200px" src="https://th.bing.com/th/id/OIP.AI5kIJS5swcXG45WuIGKqQHaE7?rs=1&pid=ImgDetMain"></a></p>
-            </h3>
-            </div>
-            <div class="col-md-4">
-                <h3> FICTION 
-                <p><a href="BOOK/"><img width="250px" height="200px" src="https://th.bing.com/th/id/OIP.u_ddum4F9Q1ltwRp73eWOAAAAA?w=474&h=474&rs=1&pid=ImgDetMain"></a></p>
-                </h3>   
-            </div>
-            <div class="col-md-4">
-            <h3>FANTACY
-            <p><img width="250px" height="200px" src="https://th.bing.com/th/id/R.1dbf44d1749485e4a3a7e1816c6bb481?rik=IEUvQOalbGab%2fg&pid=ImgRaw&r=0"></p>
-            </h3>
-            </div>
-        </div>
-    </div>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #eef2f5;
+}
+
+.topnav {
+  display: flex;
+  justify-content: space-between; /* Space between items */
+  align-items: center;
+  background-color: #2196F3;
+  padding: 10px 15px; /* Reduced padding */
+  color: white;
+}
+
+.topnav a {
+  color: white;
+  padding: 8px 12px; /* Slightly increased padding */
+  text-decoration: none;
+  font-size: 14px; /* Smaller font size */
+  transition: background-color 0.3s;
+  margin: 0 20px; /* Margin for spacing */
+}
+
+.topnav a:hover {
+  background-color: #1a73e8;
+}
+
+.close-btn {
+  background-color: #f44336; /* Red background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px; /* Padding for the button */
+  cursor: pointer;
+  font-size: 14px; /* Font size */
+}
+
+.close-btn:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+.banner-item {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px; /* Reduced padding */
+  margin-bottom: 20px;
+}
+
+.grid-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Reduced gap */
+  padding: 20px;
+}
+
+.grid-item {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px; /* Reduced padding */
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 220px; /* Adjusted width */
+}
+
+.grid-item:hover {
+  transform: translateY(-3px); /* Reduced hover effect */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item img {
+  width: 70%; /* Set to a smaller percentage */
+  max-width: 150px; /* Reduced max width */
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto; /* Center image */
+}
+
+h2 {
+  color: #2196F3;
+  margin: 10px 0; /* Reduced margin */
+}
+
+.footer {
+  text-align: center;
+  padding: 10px; /* Reduced padding */
+  background-color: #2196F3;
+  color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.thank-you-message {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+</style>
+
+<div class="topnav">
+  <div>
+    <a class="active" href="#home"><i class="fa fa-home"></i>Home</a>
+    <a href="about/"><i class="fa fa-info-circle"></i>About</a>
+    <a href="contact/"><i class="fa fa-envelope"></i>Contact</a>
+  </div>
+  <button class="close-btn" onclick="showThankYou()">Close</button>
+</div>
+
+<div class="banner-item">
+  <img src="https://images-production.bookshop.org/spree/affiliate_profiles/banner_images/64/original/Screen_Shot_2020-01-25_at_09.18.49.jpg?1579961942" alt="Read with Me" style="width: 100%; border-radius: 10px;">
+  <h2>Welcome to Our Book Collection</h2>
+  <p>Explore a variety of books across different genres!</p>
+</div>
+
+<div class="grid-container">
+  <div class="grid-item">
+    <h2>IT Sector</h2>
+    <img src="https://th.bing.com/th/id/OIP.O15S72dqmaCsXViJzu6WbwHaHZ?rs=1&pid=ImgDetMain" alt="IT Sector">
+    <p>Dive into our collection of resources focused on the IT industry.</p>
+    <p><a href="books/" style="color: #2196F3;">Explore Books</a></p>
+  </div>
+
+  <div class="grid-item">
+    <h2>Space Technology</h2>
+    <img src="https://th.bing.com/th/id/OIP.tCnNz_DHhgAXGOM9Jo6k7gHaHa?rs=1&pid=ImgDetMain" alt="Space Technology">
+    <p>Discover advancements in space exploration and technology.</p>
+    <p><a href="bbooks/" style="color: #2196F3;">Explore Books</a></p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>&copy; 2024 Book Recommendation System | All Rights Reserved</p>
+</div>
+
+<div class="thank-you-message" id="thankYouMessage">
+  <h2>Thank You for Visiting!</h2>
+  <p>Your support is appreciated.</p>
+  <button onclick="redirectToNewTab()">Close</button>
+</div>
+
+<script>
+function showThankYou() {
+    document.getElementById('thankYouMessage').style.display = 'block';
+}
+
+function redirectToNewTab() {
+    // Close the thank-you message
+    closeThankYou();
+    // Open a new tab (or window)
+    window.open('https://www.New Tab.com', '_blank'); // Replace with your desired URL
+}
+
+function closeThankYou() {
+    document.getElementById('thankYouMessage').style.display = 'none';
+}
+</script>
+
 {% endblock %}

@@ -2,9 +2,63 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from App.models import Book
-# from App.models import FBook
-from App.models import NBook
 # Create your views here.
+import os
+import json
+from django.conf import settings
+from django.shortcuts import render
+#contact form
+
+
+#___________________________
+def book_list_viiew(request):
+    file_path = os.path.join(settings.BASE_DIR, 'App', 'space_technology_books.json')
+    with open(file_path) as f:
+        data = json.load(f)
+
+    # Sort books by rating in descending order
+    books = sorted(data['bk'], key=lambda x: x['rating'], reverse=True)
+
+    context = {
+        'books': books,
+    }
+    return render(request, 'book_list.html', context)
+
+#111111111111111
+def book_list_view(request):
+    file_path = os.path.join(settings.BASE_DIR, 'App', 'books.json')
+    with open(file_path) as f:
+        data = json.load(f)
+
+    # Sort books by rating in descending order
+    books = sorted(data['bk'], key=lambda x: x['rating'], reverse=True)
+
+    context = {
+        'books': books,
+    }
+    return render(request, 'book_list.html', context)
+#bbbbbbbbbbbbbbb
+# def load_json_dataa():
+#     json_file_path = os.path.join(settings.BASE_DIR, 'App', 'space_technology_books.json')
+#     with open(json_file_path, 'r', encoding='utf-8') as f:
+#         return json.load(f)
+
+# def book_list_vieww(request):
+#     data = load_json_dataa()
+#     books = data['bk']
+#     return render(request, 'json.html', {'books': books})
+
+#aaaaaaaaaaaaaaaaaaaaaaaaa
+
+def contact(request):
+    template=loader.get_template('contact.html')
+    return HttpResponse(template.render())
+def about(request):
+    template=loader.get_template('about.html')
+    return HttpResponse(template.render())
+def bookss(request):
+    template=loader.get_template('json.html')
+    return HttpResponse(template.render())
 def BOOK(request):
         books=Book.objects.all().values()
         template=loader.get_template('BOOK.html')
@@ -12,32 +66,12 @@ def BOOK(request):
             'books':books,
         }
         return HttpResponse(template.render(context,request))
-def NBOOK(request):
-        nbooks=NBook.objects.all().values()
-        template=loader.get_template('NBOOK.html')
-        context={
-            'nbooks':nbooks,
-        }
-        return HttpResponse(template.render(context,request))
-# def FBOOK(request):
-#         fbooks=FBook.objects.all().values()
-#         template=loader.get_template('FBOOK.html')
-#         context={
-#             'Fbooks':fbooks,
-#         }
-#         return HttpResponse(template.render(context,request))
+
 def details(request,id):
     book=Book.objects.get(id=id)
     template=loader.get_template('details.html')
     context={
         'book':book,
-    }
-    return HttpResponse(template.render(context,request))
-def ndetails(request,id):
-    nnbook=NBook.objects.get(id=id)
-    template=loader.get_template('ndetails.html')
-    context={
-        'nnbook':nnbook,
     }
     return HttpResponse(template.render(context,request))
 

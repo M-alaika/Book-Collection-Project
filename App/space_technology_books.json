@@ -1,0 +1,76 @@
+{
+    "bk": [
+        {
+            "isbn": "9780262035604",
+            "title": "The Innovators: How a Group of Hackers, Geniuses, and Geeks Created the Digital Revolution",
+            "subtitle": "A History of the Computer and the Internet",
+            "author": "Walter Isaacson",
+            "published": "2014-10-07T00:00:00.000Z",
+            "publisher": "Simon & Schuster",
+            "pages": 560,
+            "description": "In this book, Walter Isaacson tells the fascinating story of the people who created the computer and the internet.",
+            "website": "https://www.amazon.com/Innovators-Group-Hackers-Geniuses-Revolution/dp/1476708697",
+            "rating": 4.5
+        },
+        {
+            "isbn": "9781786463532",
+            "title": "Astrophysics for People in a Hurry",
+            "subtitle": "The Universe in a Nutshell",
+            "author": "Neil deGrasse Tyson",
+            "published": "2017-05-02T00:00:00.000Z",
+            "publisher": "W. W. Norton & Company",
+            "pages": 224,
+            "description": "This book offers a quick overview of the universe and the science behind it, perfect for the busy reader.",
+            "website": "https://www.amazon.com/Astrophysics-People-Hurry-Neil-Tyson/dp/0393609391",
+            "rating": 4.7
+        },
+        {
+            "isbn": "9781451648539",
+            "title": "Sapiens: A Brief History of Humankind",
+            "subtitle": "From Prehistory to the Present",
+            "author": "Yuval Noah Harari",
+            "published": "2015-02-10T00:00:00.000Z",
+            "publisher": "Harper",
+            "pages": 464,
+            "description": "Sapiens explores how Homo sapiens became the dominant species on Earth, weaving together history and science.",
+            "website": "https://www.amazon.com/Sapiens-Humankind-Yuval-Noah-Harari/dp/0062316091",
+            "rating": 4.8
+        },
+        {
+            "isbn": "9781476784866",
+            "title": "The Martian",
+            "subtitle": "A Novel",
+            "author": "Andy Weir",
+            "published": "2014-09-30T00:00:00.000Z",
+            "publisher": "Crown",
+            "pages": 369,
+            "description": "This gripping novel tells the story of an astronaut stranded on Mars and his struggle to survive.",
+            "website": "https://www.amazon.com/Martian-Andy-Weir/dp/0553418025",
+            "rating": 4.6
+        },
+        {
+            "isbn": "9780300208448",
+            "title": "The Space Between Worlds",
+            "subtitle": "A Novel",
+            "author": "Micaiah Johnson",
+            "published": "2020-08-04T00:00:00.000Z",
+            "publisher": "Tor Books",
+            "pages": 368,
+            "description": "In a multiverse where travel is possible, the only worlds you can visit are the ones where your alternate self is dead.",
+            "website": "https://www.amazon.com/Space-Between-Worlds-Micaiah-Johnson/dp/1250752983",
+            "rating": 4.2
+        },
+        {
+            "isbn": "9780143111593",
+            "title": "The Gene: An Intimate History",
+            "subtitle": "From the Discovery of DNA to Genetic Engineering",
+            "author": "Siddhartha Mukherjee",
+            "published": "2016-05-17T00:00:00.000Z",
+            "publisher": "Scribner",
+            "pages": 608,
+            "description": "This book is a comprehensive history of the gene and its significance in our understanding of biology.",
+            "website": "https://www.amazon.com/Gene-Intimate-History-Siddhartha-Mukherjee/dp/1476733508",
+            "rating": 4.3
+        }
+    ]
+}
