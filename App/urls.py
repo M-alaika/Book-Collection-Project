@@ -1,9 +1,17 @@
 from django.urls import path
 from . import views
+
+
+from django.urls import path
+from .views import contact_view
+from django.http import HttpResponse
 urlpatterns=[
     path('',views.main,name='main'),
 
-    path('contact/', views.contact, name='contact'),
+     path('contact/', contact_view, name='contact'),
+    path('success/', lambda request: HttpResponse("Message sent!"), name='success'),
+
+    # path('contact/', views.contact, name='contact'),
 
 
     path('books/', views.book_list_view, name='json'),

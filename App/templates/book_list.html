@@ -3,68 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book List</title>
+    <title>Literary Treasures</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 20px;
-            background-color: #def0ff; /* Blue background */
+            background-color: #f0f8ff; /* Light blue background */
             color: #333; /* Dark text for readability */
         }
         h1 {
             text-align: center;
-            color: #ffffff; /* Gold color for the heading */
-            font-size: 2.5em; /* Larger font size */
-            margin-bottom: 20px; /* Spacing below the heading */
+            color: #ffffff; /* White color for the heading */
+            font-size: 2.8em; /* Slightly larger font size */
+            margin-bottom: 30px; /* Spacing below the heading */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
-            background-color:  #2196F3;; /* Mild light blue for container */
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            background-color: #4a90e2; /* Rich blue for container */
+            border-radius: 12px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
         }
         .book {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 10px 0;
-            background-color: #f9f9f9; /* Light background for books */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            background-color: #ffffff; /* White background for books */
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+        }
+        .book:hover {
+            transform: translateY(-6px); /* Lift effect on hover */
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
         }
         .title {
-            font-size: 1.5em;
-            color: #333; /* Dark color for title */
+            font-size: 1.9em;
+            color: #2c3e50; /* Darker color for title */
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1em;
+            color: #7f8c8d; /* Gray for subtitle */
         }
         .author {
-            font-style: italic;
-            color: #666; /* Gray for author */
+            font-weight: bold;
+            color: #34495e; /* Dark blue for author */
+            margin-bottom: 10px;
         }
         .description {
             margin-top: 10px;
+            line-height: 1.6; /* Improved line spacing */
+            color: #555; /* Medium gray for description */
         }
         .website {
             margin-top: 10px;
         }
+        .website a {
+            color: #3498db; /* Link color */
+            text-decoration: none; /* Remove underline */
+            font-weight: bold;
+            transition: color 0.3s; /* Smooth color transition */
+        }
+        .website a:hover {
+            color: #e74c3c; /* Change link color on hover */
+        }
         .rating {
             font-weight: bold;
-            color: #f80000; /* Gold color for rating */
+            color: #e67e22; /* Orange for rating */
+            margin-top: 10px;
+        }
+        .details {
+            margin-top: 10px;
+            color: #666; /* Darker gray for details */
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Book List</h1>
+        <h1>Literary Treasures</h1>
         <div id="bookList">
             {% for book in books %}
             <div class="book">
                 <div class="title">{{ book.title }} <span class="subtitle">({{ book.subtitle }})</span></div>
                 <div class="author">by {{ book.author }}</div>
-                <div><strong>ISBN:</strong> {{ book.isbn }}</div>
-                <div><strong>Published:</strong> {{ book.published|date:"F j, Y" }}</div>
-                <div><strong>Publisher:</strong> {{ book.publisher }}</div>
-                <div><strong>Pages:</strong> {{ book.pages }}</div>
+                <div class="details">
+                    <strong>ISBN:</strong> {{ book.isbn }} | 
+                    <strong>Publisher:</strong> {{ book.publisher }} | 
+                    <strong>Pages:</strong> {{ book.pages }}
+                </div>
                 <div class="description">{{ book.description }}</div>
                 <div class="website"><a href="{{ book.website }}" target="_blank">Visit Website</a></div>
                 <div class="rating">Rating: {{ book.rating }}</div>
